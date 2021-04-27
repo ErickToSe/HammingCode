@@ -93,6 +93,7 @@ string getHammingCode() {
                  ///En la matriz sindrome hay una separacion exponencial entre las distancias de los bits que vamos a contar, para eso usamos inc, init nos marcara en donde esta el primer bit a revisar
                  ///en cada fila
                 for (int i(init); i<TOTAL_BITS; i+=inc) {
+                    cout << init << endl;
                     for (int j(0); j<raw; j++) {            ///de acuerdo al numero de fila sera la cantidad de bits que leeremos antes de cada incremento
                         if (hammingCode[i+j] == '1') {
                             cont++;
@@ -106,7 +107,7 @@ string getHammingCode() {
                 }
                 paridadPos*=2;
                 inc*=2;
-                init+=raw;
+                init=paridadPos-1;
                 raw++;
             }
             cout << endl << " -> " << hammingCode << " <- " << endl << endl;
